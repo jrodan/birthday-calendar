@@ -1,0 +1,8 @@
+__pycache__
+test.txt
+test-confluence.txt
+tmp/
+log/
+exports/
+config_local.py
+todaysBirthdayList.txt

@@ -1,0 +1,8 @@
+baseDir = "/path/to/current/root/file"
+facebookUser = ""
+facebookPassword = ""
+confluenceUser = ""
+confluencePassword = ""
+confluencePage1 = ""
+confluencePage2 = ""
+texteditorPath = ""
