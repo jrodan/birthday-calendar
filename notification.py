@@ -117,9 +117,23 @@ def writeToConfig():
                        "lastDay = \""+str(today)+"\"", content))
 
 
+def updateBirthdayLists():
+
+    for module in cfg.modulesToUpateBeforeNotification:
+        # get the linkedin birthdays of today
+        if(len(module) > 0):
+            try:
+                os.system("/usr/bin/python3 "+module)
+            except:
+                print("An exception occurred during execution of " +
+                      module+" crawler ")
+
+
 date = getDate()
 
 if(date < today):
+
+    updateBirthdayLists()
     foundBirthdays = handleExportFiles()
     print(foundBirthdays)
     writeTodaysBirthdayList(foundBirthdays)

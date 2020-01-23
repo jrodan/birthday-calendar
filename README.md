@@ -26,7 +26,7 @@ Store the relevant information in the config file and save.
 ## Run the crawler
 
 for facebook:
-    python3 facebook.py 
+    - python3 facebook.py 
 
 for confluence:
     python3 confluence-pd.py
