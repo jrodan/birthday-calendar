@@ -6,3 +6,4 @@ log/
 exports/
 config_local.py
 todaysBirthdayList.txt
+todaysBirthdayList.html

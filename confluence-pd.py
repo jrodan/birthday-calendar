@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 import time
-import birthday
+from src import birthday
 import config_local as cfg
 
 chrome_options = webdriver.ChromeOptions()
