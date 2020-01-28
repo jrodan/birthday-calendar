@@ -13,3 +13,7 @@ linkedInURLPage1 = "https://www.linkedin.com/login/"
 linkedInURLPage2 = "https://www.linkedin.com/notifications/"
 modulesToUpateBeforeNotification = ["linkedin.py", ""]
 exportFolder = "exports"
+xingUser = ""
+xingPassword = ""
+xingPage1 = "https://login.xing.com/"
+xingPage2 = "https://www.xing.com/premium/changes/contact_birthday_soon"

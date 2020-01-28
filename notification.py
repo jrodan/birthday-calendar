@@ -6,7 +6,7 @@ import fileinput
 import re
 import json
 import copy
-from src import templating, helper, exportFile, birthday
+from src import helper, exportFile, birthday
 
 tmpFolder = "tmp/"
 configFileName = "config.py"
@@ -50,7 +50,7 @@ date = getDate()
 
 if(date < helper.getToday()):
 
-    # TODO updateBirthdayLists()
+    updateBirthdayLists()
     exportFile.fillDailyBirthdayListFromExportFiles(cfg)
     writeToConfig()
 

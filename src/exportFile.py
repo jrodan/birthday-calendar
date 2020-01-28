@@ -72,12 +72,11 @@ def writeTodaysBirthdayListHtml(cfg, foundBirthdays):
     resultFile = template.replace("<!-- PLACEHOLDER_BIRTHDAYS -->", strRes)
 
     f = open(cfg.baseDir+"todaysBirthdayList.html", "w")
+    f.write(resultFile)
+    f.close()
 
     os.system(
         cfg.browserPath+" "+cfg.baseDir+"todaysBirthdayList.html")
-
-    f.write(resultFile)
-    f.close()
 
 
 class ExportFile():
