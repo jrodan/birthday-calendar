@@ -1,5 +1,8 @@
 # importing necessary classes
 # from different modules
+#from .. import config_local as cfg
+import sys, os
+sys.path.insert(0, os.path.abspath('..'))
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait

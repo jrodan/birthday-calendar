@@ -6,6 +6,7 @@ import os
 
 def fillDailyBirthdayListFromExportFiles(cfg):
     bList = handleExportFiles(cfg)
+    writeTodaysBirthdayList(cfg, bList)
     writeTodaysBirthdayListHtml(cfg, bList)
     print(bList)
 
@@ -18,9 +19,13 @@ def handleExportFiles(cfg):
 
     print("checking for new birthdays today and the last 2 days")
     for fileName in files:
-        exportFileO = ExportFile(fileName, cfg)
-        birthdayLists.append(exportFileO)
-        birthdays = birthdays + exportFileO.birthdays
+        try:
+            exportFileO = ExportFile(fileName, cfg)
+            birthdayLists.append(exportFileO)
+            birthdays = birthdays + exportFileO.birthdays
+        except:
+            print("could not read file " +
+                  fileName)
 
     # return birthdays
     return sorted(birthdays,
@@ -33,7 +38,7 @@ def writeTodaysBirthdayList(cfg, foundBirthdays):
     strRes = ""
 
     for birthdayL in foundBirthdays:
-        strRes += str(birthdayL.birthdayDate.tm_yday) + "." + \
+        strRes += str(birthdayL.birthdayDate.tm_mday) + "." + \
             str(birthdayL.birthdayDate.tm_mon) + \
             ". - "+str(birthdayL.name) + " - " + str(birthdayL.source.replace("-extract.txt", "")) + \
             "\r\n"
@@ -60,7 +65,7 @@ def writeTodaysBirthdayListHtml(cfg, foundBirthdays):
     strRes = ""
 
     for birthdayL in foundBirthdays:
-        row = templateRow.replace("<!-- PLACEHOLDER_DAY -->", str(birthdayL.birthdayDate.tm_yday) + "." +
+        row = templateRow.replace("<!-- PLACEHOLDER_DAY -->", str(birthdayL.birthdayDate.tm_mday) + "." +
                                   str(birthdayL.birthdayDate.tm_mon) +
                                   ".")
         row = row.replace("<!-- PLACEHOLDER_NAME -->", str(birthdayL.name))

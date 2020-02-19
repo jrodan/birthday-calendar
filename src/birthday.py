@@ -28,10 +28,10 @@ class Birthday():
             self.birthdayDate = time.strptime(self.birthdayS, "%d.%m.%Y")
 
     def getBirthdayDay(self):
-        return self.birthdayDate.tm_yday
+        return self.birthdayDate.tm_mday
 
     def __repr__(self):
-        return str(self.birthdayDate.tm_yday)+" "+self.name
+        return str(self.birthdayDate.tm_mday)+" "+self.name
 
     def parseRow(self):
         for compareDate in self.compareDates:

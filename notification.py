@@ -40,7 +40,8 @@ def updateBirthdayLists():
         # get the linkedin birthdays of today
         if(len(module) > 0):
             try:
-                os.system("/usr/bin/python3 "+module)
+                os.system("cd "+cfg.baseDir+" | /usr/bin/python3 -m " +
+                          cfg.scrappingModulesPath + "." + module)
             except:
                 print("An exception occurred during execution of " +
                       module+" crawler ")
